@@ -2,14 +2,29 @@ package main
 
 import (
 	"fmt"
+	"time"
 )
 
 // TIP <p>To run your code, right-click the code and select <b>Run</b>.</p> <p>Alternatively, click
 // the <icon src="AllIcons.Actions.Execute"/> icon in the gutter and select the <b>Run</b> menu item from here.</p>
 func main() {
-	for i := 1; i <= 5; i++ {
-		//TIP <p>To start your debugging session, right-click your code in the editor and select the Debug option.</p> <p>We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-		// for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.</p>
-		fmt.Println("i =", 100/i)
+
+	go temp2()
+	time.Sleep(time.Second * 12)
+	fmt.Println("DONE")
+
+}
+
+func temp2() {
+	for i := 0; i < 100; i++ {
+		fmt.Println(i)
+		time.Sleep(time.Millisecond * 100)
+	}
+}
+
+func temp1() {
+	for i := 0; i < 10; i++ {
+		fmt.Println(i, "  ")
+		time.Sleep(time.Second * 3)
 	}
 }
